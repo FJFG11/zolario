@@ -2,12 +2,7 @@
 
 # Zolario
 
-Zolario is a open source roblox user tag system.
-
-## Features
-Zolario supports:
-> Custom Icons           
-> Different uses for the secondary label: GroupRank, TeamName, TimeInGame etc.
+Zolario is a open source roblox user tag system for all games with easy secondary label use changes, So far select from GroupRank, GameTime, TeamName and expect more **maybe even make your own!**
 
 ## Setup
 How to setup Zolario:
@@ -19,14 +14,16 @@ How to setup Zolario:
 ## Custom Icons
 How to use them:
 
+1. Open game/ServerScriptService/Zolario/Custom Icons,
+2. Copy:
 ```luau
-IconAPI.AddIcon(player, { 
-		Name = "AddANameHere", -- Put a name between the "" so it you can get the icon later
-		ImageUrl = "rbxassetid://IDHere" -- Put the asset ID here to display the image you want
-})
-
-local NameThisWhatever = IconAPI.GetIcon(player, "IconName") -- Replace 'IconName' with that name of a existing icon you made above
-
-setIconVisible(IconName, player.UserId == 421517931) -- Replace 'IconName' with that name of a existing icon and then how you can get the icon E.g 'player.UserId == 421517931'
-
+["icon1"] = { -- Change the 1 to the number the icon is. E.g Icon1, Icon2 etc
+		["Name"] = "IconNameHere",
+		["ImageUrl"] = "rbxassetid://Image_ID_Here",
+		["Unlock"] = function(player)
+			-- Custom unlock code here or 'return true' for auto unlock
+		end 
+	},
 ```
+3. Paste the code into game/ServerScriptService/Zolario/Custom Icons,
+4. Change the settings to what you want.
